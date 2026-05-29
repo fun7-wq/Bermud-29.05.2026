@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вестник Треугольника | Выпуск №1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'mag-dark': '#0f172a',
+                        'mag-accent': '#ec4899', // Pink
+                        'mag-glow': '#8b5cf6'  // Purple
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at 15% 50%, rgba(236, 72, 153, 0.15), transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
+            background-attachment: fixed;
+            color: #f8fafc;
+        }
+        .magazine-cover {
+            background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,1) 100%), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop') center/cover;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #ec4899, #8b5cf6);
+        }
+        .photo-frame {
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.3);
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8b5cf6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-mag-accent selection:text-white">
+
+    <header class="magazine-cover relative w-full h-[60vh] min-h-[400px] flex flex-col justify-end items-center pb-12 px-4 text-center">
+        <div class="absolute top-4 left-4 right-4 flex justify-between items-center text-xs font-semibold tracking-widest uppercase text-white/70">
+            <span>Специальный выпуск</span>
+            <span>Топ-15 за неделю</span>
+        </div>
+        <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-lg">
+            ВЕСТНИК <br><span class="text-gradient">ТРЕУГОЛЬНИКА</span>
+        </h1>
+        <p class="text-lg md:text-xl font-light max-w-2xl text-slate-200">
+            Главные сплетни, скандалы и интриги Бермудского чата. Читать до полного просветления.
+        </p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        
+        <section class="mb-20">
+            <h2 class="text-3xl font-serif font-bold mb-8 text-center border-b border-white/10 pb-4">
+                💎 ТОП-15 УЧАСТНИКОВ ПО АКТИВУ
+            </h2>
+            <p class="text-center text-slate-400 mb-8 text-sm md:text-base">
+                Нажмите на имя, чтобы перейти к досье.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                <a href="#hero-1" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-mag-accent flex items-center justify-center">1. Аня</a>
+                <a href="#hero-2" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-mag-accent flex items-center justify-center">2. Морковка</a>
+                <a href="#hero-3" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-mag-accent flex items-center justify-center">3. Наташа (BurntSugar)</a>
+                <a href="#hero-4" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-mag-glow flex items-center justify-center">4. Рома (Дед)</a>
+                <a href="#hero-5" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-mag-glow flex items-center justify-center">5. Роман Сергеевич</a>
+                <a href="#hero-6" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-mag-glow flex items-center justify-center">6. Пабло Эскобар</a>
+                <a href="#hero-7" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-emerald-400 flex items-center justify-center">7. Medusai</a>
+                <a href="#hero-8" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-emerald-400 flex items-center justify-center">8. ༄𝓚𝓲𝓽𝓼𝓾𝓷𝓮༅ (Настя)</a>
+                <a href="#hero-9" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-emerald-400 flex items-center justify-center">9. Никита Одеченко</a>
+                <a href="#hero-10" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-yellow-400 flex items-center justify-center">10. Свяжистка Ксю</a>
+                <a href="#hero-11" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-yellow-400 flex items-center justify-center">11. M.A.S.T.E.R. (Мишаня)</a>
+                <a href="#hero-12" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-yellow-400 flex items-center justify-center">12. Маша</a>
+                <a href="#hero-13" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-orange-400 flex items-center justify-center">13. Мультик (Марина)</a>
+                <a href="#hero-14" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-orange-400 flex items-center justify-center">14. Highlander (Адам)</a>
+                <a href="#hero-15" class="glass-card p-3 rounded-xl text-center hover:bg-white/10 transition-colors border-l-2 border-l-orange-400 flex items-center justify-center">15. Северная Ромашка</a>
+            </div>
+        </section>
+
+        <article id="hero-1" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/wJ3tsfx.jpg" alt="Аня" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/ec4899/ffffff?text=Аня'">
+                    <div class="mt-4 text-center text-sm font-bold text-mag-accent">#1 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">1. Аня <span class="text-xl opacity-70">🔥 Королева Сарказма</span></h2>
+                    
+                    <div class="bg-white/5 border-l-4 border-mag-accent p-4 rounded-r-lg mb-6 text-sm italic">
+                        <strong>От редакции:</strong> Наливайте свой раф на безлактозном, готовьте валерьянку — сегодня у нас на повестке дня человек, который держит половину чата в заложниках, а вторую половину — в своем гареме. Разбираем на атомы нашу главную мать-героиню и профессионального провокатора!
+                    </div>
+
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🍼 Яжмать за зарплату, или Как довести Рому до истерики:</strong> Аня филигранно совмещает декрет с работой штатным троллем. Недавно она родила сына Матвея прямо в свой день рождения, но материнство не сделало её мягче. Наоборот, она решила устроить чату показательную лекцию о том, что рожает она исключительно за деньги. Рома от таких заявлений чуть не поперхнулся пенсией, пока Аня откровенно упивалась тем, как легко она разводит деда на эмоции. Шах и мат, феминистки!</p>
+                        
+                        <p><strong class="text-white">🥚 Пабло Эскобар и его лысые проблемы:</strong> Пабло регулярно клянчит у неё нюдсы. В ответ Аня предлагает ему купить инновационный бюстгальтер для яичек. Но главный удар случился, когда Пабло побрился налысо. Аня заявила, что теперь официально перестанет «гонять лысого». Пабло терпит, надеется и верит, оставаясь почетным лысым членом гарема.</p>
+                        
+                        <p><strong class="text-white">👴 Война поколений: Аня против Ромы:</strong> Если Рома записывает гневные голосовые — знайте, там поковырялась Аня. Она обожает отправлять Романа Сергеевича на пенсию. Рома кричит, Аня отвечает спокойным тоном: «Это всего лишь твое восприятие». Идеальное убийство нервных клеток!</p>
+                        
+                        <p><strong class="text-white">⚡️ Ночной дожор и энергетики:</strong> Пока нормальные люди спят, Аня вливает пятую банку энергетика и идет намывать полы. Она успевает диагностировать финансовое будущее: чешется левый сосок — это к деньгам!</p>
+                        
+                        <p><strong class="text-white">💍 Гарем расширяется:</strong> Аня заявляет, что замужем в шестой раз, но вербует новых фаворитов. Недавно в сети обаяния попал дагестанец Highlander (Адам). Пабло плачет в стороне, Рома пьет корвалол, а Аня коллекционирует мужские сердца.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-2" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row-reverse gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/g3a8I3k.jpg" alt="Морковка" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/f97316/ffffff?text=Морковка'">
+                    <div class="mt-4 text-center text-sm font-bold text-orange-400">#2 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">2. Морковка <span class="text-xl opacity-70">🐢 Мать Черепах</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🐢 Ипотека на панцирь:</strong> В номинации «Спонтанная покупка года» побеждает наша Морковь! Пошла в зоомагазин проконсультироваться по попугаям, а вышла многодетной матерью черепашек-ниндзя. Радость длилась недолго: выяснилось, что им скоро понадобится огромный аквариум. Коллектив тем временем заботливо гуглит рецепты черепашьего супа.</p>
+                        
+                        <p><strong class="text-white">🏍 Маньячка с медной леской:</strong> У неё еще и пернатые разбойники живут, пугающиеся шума за окном. Главные враги — громкие мотоциклисты («пердоциклисты»). Морковка всерьез мечтает натянуть медную леску между деревьями. А пока в ход идет метание куриных яиц из окна. Бойтесь эту женщину!</p>
+                        
+                        <p><strong class="text-white">🔮 Секта ретроградного Меркурия:</strong> Ни один день не обходится без простыней текста про зодиак. За этот спам она получила титул «Гороскопный скамер». Если жизнь летит на дно — она быстро спишет всё на ваш асцендент в Водолее.</p>
+                        
+                        <p><strong class="text-white">👴 Битва титанов: Овосщь против Деда Ромы:</strong> Морковка ласково троллит деда, предлагая надеть памперсы. Роман нежно величает её «кочерыжечкой капусточки» и обещает сдать в стационар с мягкими стенами. Сама Морковь гордо заявляет, что живёт в коробке из-под холодильника, но с аквариумными лампами. Идиллия!</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-3" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/XhYGrE8.jpg" alt="Наташа" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/8b5cf6/ffffff?text=Наташа'">
+                    <div class="mt-4 text-center text-sm font-bold text-mag-glow">#3 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">3. Наташа (ℬ𝓊𝓇𝓃𝓉𝒮𝓊ℊ𝒶𝓇) <span class="text-xl opacity-70">👑 Владычица Бермуд</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">👑 Диктатура и коррупция на ирисках:</strong> Полноправная владычица Бермудского треугольника. Чуть что не так — летит бан, как это было со сказочником-миллионером. Законы суровы, но коррупцию никто не отменял: Пабло Эскобар в открытую пытается подкупить её ирисками. Наташа торгуется как брокер!</p>
+                        
+                        <p><strong class="text-white">📏 Полтора метра ярости:</strong> Пока Наташа доказывает, что её рост — метр шестьдесят, коллектив непреклонно величает её «Наташка-полторашка». Сама же героиня заявляет, что она вообще-то девственница. Чат делает вид, что верит.</p>
+                        
+                        <p><strong class="text-white">🏍 Муравейники и коварные врачи:</strong> В её биографии есть эпичные полеты с мотоцикла прямо в муравейник. А медицине больше не доверяет: в травмпункте пообещали, что «комарик укусит», а в итоге всадили жесткий укол под лопатку.</p>
+                        
+                        <p><strong class="text-white">🧠 Лингвистический шок:</strong> Medusai открыл для Наташи дивный новый мир термина «фельчинг». Пройдя стадии шока, Наташа нарекла его «Мистером Фельчингом». В ответ учит его терминам вроде «попердукать».</p>
+                        
+                        <p><strong class="text-white">👴 Бесконечная война с Дедом Ромой:</strong> Рома кроет её матом, обвиняет во лжи. Наташа филигранно бьет в ответ: называет его просроченным, напоминая, что вместо молока у него там забродившая ряженка.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-4" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row-reverse gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/DP7mS69.jpg" alt="Рома" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/64748b/ffffff?text=Дед+Рома'">
+                    <div class="mt-4 text-center text-sm font-bold text-slate-400">#4 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">4. Рома <span class="text-xl opacity-70">👴 Палата №6 (Дед Рома)</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">👴 Скуф в стадии отрицания:</strong> «Мне всего 36 годиков!» — кричит Рома, пока чат оформляет ему проездной. Он яростно доказывает свою мощь (аппаратом можно «дверью прижимать»), а Аня заботливо предлагает ему сделать массаж простаты.</p>
+                        
+                        <p><strong class="text-white">🔪 Маньячки с ножами:</strong> Личная жизнь Ромы — шоу на НТВ. Бывшая трижды кидалась на него с ножом и порезала сестру. А другую пассию ловелас бросил из-за смертной скуки в миссионерской позе.</p>
+                        
+                        <p><strong class="text-white">🔞 Интриги и блестящие шары:</strong> Отношения с женщинами — минное поле. С рыжей — батл с фекалиями. Зато с Dvinka в ночи вспыхнула искра, и, судя по её восторгам про «блестящие яички», дед расчехлил арсенал, но потом испугался и заставил всё удалить.</p>
+                        
+                        <p><strong class="text-white">🥕 Предательство Морковки:</strong> Драма недели: Рома узнал, что murrkovka врала ему, что полная, а на деле оказалась стройной! Дед воспринял это как удар в спину.</p>
+                        
+                        <p><strong class="text-white">📱 Элитный айфонобоярин:</strong> Яростно защищает iPhone и возмущается, зачем женщинам дорогое белье, если можно взять за 200 рублей. Зато на себе не экономит: накрывает поляны с винишком и элитными пельмешками.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-5" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/2UKYpIn.jpg" alt="Роман Сергеевич" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/3b82f6/ffffff?text=Админ'">
+                    <div class="mt-4 text-center text-sm font-bold text-blue-400">#5 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">5. Роман Сергеевич <span class="text-xl opacity-70">👮‍♂️ Синдром вахтера</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">👮‍♂️ Таможенный контроль:</strong> Герой работает с продуктивностью нейросети. Каждый пассажир проходит допрос. Если пациенту 17 лет — путевка в вечный бан. А драчунам раздает муты, отправляя «отдохнуть».</p>
+                        
+                        <p><strong class="text-white">🚂 Рабовладелец на железной дороге:</strong> В реальной жизни 33-летний белорус трудится на ЖД. Его главная обязанность — издеваться над 16-летними практикантами. Царственно восседает на лавочке и хвастается: «Одного студента добил».</p>
+                        
+                        <p><strong class="text-white">💔 Ледяная глыба и слезы Ксюши:</strong> Свяжистка Ксю отчаянно пытается растопить его сердце, мечтает рисовать торс. Он реагирует хладнокровно, прячется за «ревнивой женой» и уходит спать. Ксю бьется в истерике, а он попивает компот.</p>
+                        
+                        <p><strong class="text-white">🦐 Вредное креведкО:</strong> Больше всего его бесит, когда его путают со скуфом-Дедом Ромой. Нарек себя «вредным креведкО с диким взглядом». Питается правильной едой и наслаждается абсолютной админской властью.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-6" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row-reverse gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/TPqhZRA.jpg" alt="Пабло Эскобар" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/eab308/ffffff?text=Пабло'">
+                    <div class="mt-4 text-center text-sm font-bold text-yellow-500">#6 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">6. Пабло Эскобар <span class="text-xl opacity-70">🦲 Лысый романтик</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🦲 Крах надежд в гареме:</strong> Трагедия недели — Пабло побрился налысо, рассказывая, как ветерок ласкает череп. Но Аня жест не оценила и прекратила «гонять лысого». Герой сглотнул обиду и продолжил выпрашивать фото женских прелестей.</p>
+                        
+                        <p><strong class="text-white">🍆 Дикпик-рулетка:</strong> Устроил шокирующий интерактив: конкурс на лучшее фото мужского достоинства в ЛС, пообещав пригласить победителя домой. А когда девушки требуют пруфов от него, угрожает скинуть блестящую лысую голову.</p>
+                        
+                        <p><strong class="text-white">🎓 Философ «мамкиных корзиночек»:</strong> Вступил в бой с матриархатом. Его теория: в том, что мужики вырастают слабаками, виноваты женщины, ведь в школах и универах работают только они!</p>
+                        
+                        <p><strong class="text-white">💸 В поиске богатой милфы:</strong> Истинная мечта Пабло — найти обеспеченную милфу. А пока подкатывает ко всем новеньким девушкам и профессионально клянчит у местных виртуальную валюту — ириски.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-7" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/B9NpdsR.jpg" alt="medusai" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/10b981/ffffff?text=Медуза'">
+                    <div class="mt-4 text-center text-sm font-bold text-emerald-400">#7 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">7. Medusai <span class="text-xl opacity-70">🧠 Мистер Фельчинг</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🧠 Амбассадор патриархата:</strong> Идет в крестовый поход против женской логики. Считает, что у женщин всегда виноват мужик. Пытается понять парадокс: почему дамы боятся чужих детей, но требуют, чтобы мужчины воспитывали не своих.</p>
+                        
+                        <p><strong class="text-white">📏 Битва с Полторашкой:</strong> Отношения с Наташей — кибер-БДСМ. Напоминает ей про пенсию и троллит за рост (140 см). Но главный провал случился, когда он спросил бота про «фельчинг». Теперь он официально «Мистер Фельчинг».</p>
+                        
+                        <p><strong class="text-white">🐟 Гвоздилудок:</strong> Способен съесть скумбрию с просроченным йогуртом. Желудок переваривает гвозди («ел резину и запивал соляркой»). Но мясо жарит исключительно medium. Жизненное кредо: «От виски не стоят пиписки».</p>
+                        
+                        <p><strong class="text-white">🔥 Ожоги 3 степени:</strong> Летом сел в машину в трусиках на раскаленное сиденье. Ноги обжег так, что ехал с ощущением «будто нассал». Зато теперь есть встроенная вентиляция!</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-8" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row-reverse gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/y6I81EC.jpg" alt="Настя Kitsune" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/f43f5e/ffffff?text=Настя'">
+                    <div class="mt-4 text-center text-sm font-bold text-rose-400">#8 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">8. ༄𝓚𝓲𝓽𝓼𝓾𝓷𝓮༅ (Настя) <span class="text-xl opacity-70">🦊 Немолодая ведьма</span></h2>
+                    
+                    <div class="bg-white/5 border-l-4 border-rose-400 p-4 rounded-r-lg mb-6 text-sm italic">
+                        <strong>Слово редактора:</strong> Отодвигаем кофе, тут понадобится что-то покрепче. Сегодня у нас на операционном столе главная рыжая бестия чата, потомственная гуманитарий и повелительница детсадовских демонов! Разбираем пациентку на запчасти.
+                    </div>
+
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🧸 Детсадовский надзиратель:</strong> Отпахала год в саду. Детишки боевые: 3-летние ангелочки кроют друг друга матом. А Настя умиляется и хихикает. Теперь грозится душить чат своим присутствием в отпуске.</p>
+                        
+                        <p><strong class="text-white">🐈 Мажорик без хвоста:</strong> Завела Курильского бобтейла Жорика, переименованного в Мажорика. Хвоста нет, зато общается с морской свинкой. По утрам будит хозяйку в 5 утра, чтобы... лечь спать самому.</p>
+                        
+                        <p><strong class="text-white">🔮 Гарем Ведьмы:</strong> Жонглирует мужиками виртуозно. С Alexandr флиртует, но «секса не будет». С Kind лозунги «Долой трусы». А Роме угрожает наколдовать микро-писюн. Рома в ужасе, но мы-то знаем, что ему нравится.</p>
+                        
+                        <p><strong class="text-white">🍳 Королева делегирования:</strong> Готовить умеет, но ненавидит. Идеальная стратегия: «Я покупаю алкашку, а вы стоите у плиты». Ждет мужика в фартуке на голое тело.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-9" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <!-- Special handling for missing photo -->
+                    <div class="w-full aspect-[4/5] rounded-2xl photo-frame bg-slate-800 border-2 border-dashed border-slate-600 flex flex-col items-center justify-center p-6 text-center">
+                        <div class="text-4xl mb-4">🔒</div>
+                        <p class="text-sm font-bold text-slate-300 mb-4">СЕКРЕТНОЕ ФОТО</p>
+                        <button onclick="payIriski()" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition-transform text-xs">
+                            ОТПРАВИТЬ 50 ИРИСОК ПАБЛО
+                        </button>
+                        <p id="iriski-msg" class="text-xs text-rose-400 mt-3 hidden font-semibold"></p>
+                    </div>
+                    <div class="mt-4 text-center text-sm font-bold text-slate-400">#9 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">9. Никита Одеченко <span class="text-xl opacity-70">🤖 Сломанный NPC</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🤖 Мастер пикапа:</strong> Если Никита не спросил «Как ты?», проверьте пульс. Он оперирует как скриптованный бот, допрашивая женщин. Выдает гениальные советы: «выпей кофе», «иди спи». Кажется, он верит, что это альфа-флирт.</p>
+                        
+                        <p><strong class="text-white">⛏ Солевая ферма:</strong> Раб системы. Круглосуточно доит бота, собирая ириски. Пока нормальные люди строят личную жизнь, Никита строит империю в пикселях, получая баны за нажатие кнопки раньше отката.</p>
+                        
+                        <p><strong class="text-white">🛡 Провальный Белый Рыцарь:</strong> Попытался заступиться за Мультика перед Дедом Ромой. Поняв, что пахнет жареным, сдал назад. Итог: вошел админ и впаял всем троим по 15 минут мута.</p>
+                        
+                        <p><strong class="text-white">🐢 Детские травмы:</strong> Рассказывает про успешный успех, но скрывает жуткую травму: в детстве кусала черепаха. В ужасе отказался от предложения Морковки забрать рептилию.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-10" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row-reverse gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/g3tKWJ5.jpg" alt="Свяжистка Ксю" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/a855f7/ffffff?text=Ксю'">
+                    <div class="mt-4 text-center text-sm font-bold text-purple-400">#10 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">10. Свяжистка Ксю <span class="text-xl opacity-70">🧶 Вязальное безумие</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🧶 Маниакальная охота на Рому:</strong> Ксю может связать свитер, психануть и распустить его на камеру. Главная мишень — Дед Рома. Фантазирует, как он готовит в фартуке на голое тело. Рома кричит об аллергии на вязальщиц, но Ксю пробивает броню: «Ромочка, ты такой милаха». Истинный кибер-мазохизм!</p>
+                        
+                        <p><strong class="text-white">🌩 Анапский гидрометцентр:</strong> Внештатный метеоролог. Ходит на танцы, откуда возвращается с синими коленями, будто разгружала щебень. Теперь чат слушает нытье, как ей стыдно раздеться на пляже.</p>
+                        
+                        <p><strong class="text-white">🦵 Долой колготки:</strong> Главный праздник — день снятия капроновых колготок. В кулинарии непритязательна: сыр, изюм, полусырая картошка с углей.</p>
+                        
+                        <p><strong class="text-white">🧗‍♀️ Спартанское материнство:</strong> Потащила сына пешком по скалам босиком, чтобы «срезать путь». Только хардкор и стертые пятки!</p>
+                        
+                        <p><strong class="text-white">🐈 Кот-абьюзер:</strong> Самые стабильные отношения — с котом. Она его любит, он её презирает. В его компании выбирает идеального мужика в «Сверхъестественном», но в итоге продолжает строчить послания Роме.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-11" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/uLin8xt.jpg" alt="M.A.S.T.E.R." class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/14b8a6/ffffff?text=Мишаня'">
+                    <div class="mt-4 text-center text-sm font-bold text-teal-400">#11 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">11. M.A.S.T.E.R. <span class="text-xl opacity-70">🥒 Агроном-миллионер</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🥒 Агроном с оголенным штекером:</strong> Мишаня совмещает образ дачника и подростка. Услышав про электризацию Ромашки, заявил, что «оголил штекер» и готов гнездиться. Апогеем стала продажа собственных сосков (один за 5000 рублей). Волк с Уолл-Стрит!</p>
+                        
+                        <p><strong class="text-white">💰 Forbes Бермуд:</strong> Возглавил топ богачей чата. Круглые сутки тыкает кнопки бота, маниакально скупая иконки. Абсолютный чемпион кибер-плюшничества.</p>
+                        
+                        <p><strong class="text-white">🚕 Элита таксопарка:</strong> Трудится в такси «Комфорт+» в поло Lacoste. Разрушил пафос историей про батю, который принес черепаху и поселил в коробку из-под вермута, назвав рептилию Чинзано.</p>
+                        
+                        <p><strong class="text-white">🐡 Крестный отец ФугуРомы:</strong> Нарёк админа титулом «ФугуРома Катамаран». Отношения с Наташей строятся на токсичном уважении: она «плюет» от нечистой силы, а он троллит ее за парковочные места.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-12" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row-reverse gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/oTPTQeX.jpg" alt="Маша" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/fb7185/ffffff?text=Маша'">
+                    <div class="mt-4 text-center text-sm font-bold text-rose-400">#12 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">12. Маша <span class="text-xl opacity-70">🧹 Синдром Золушки</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🧹 Полуночные потолки:</strong> Идеальный вечер — снять потолки ПВХ и намывать их до двух часов ночи. Ползает вычищая ковры, а утром ходит как зомби, мечтая выспаться.</p>
+                        
+                        <p><strong class="text-white">🦴 Анатомия дрыща:</strong> Отношения с Ромой — обмен токсичностью. Рома называет её колобком и фантазирует про синяки от костей. Маша угрожает пиздюлями и доказывает, что при росте 158 см кости спрятаны надежно.</p>
+                        
+                        <p><strong class="text-white">🐢 Аквариумный ПТСД:</strong> У Маши дергается глаз от черепах. Воспоминания о таскании аквариума в душевую общаги вызывают нервный тик. Больше никаких рептилий!</p>
+                        
+                        <p><strong class="text-white">🩲 Подъездные трусы:</strong> Криминалист двора. У подъезда кто-то бросил женские трусы, а потом и мужские. Беспредел!</p>
+                        
+                        <p><strong class="text-white">💋 Кибер-инцест:</strong> Пабло Эскобар называет её «мамой», она его «сынулей». При этом используют бот-команды, чтобы страстно засасывать друг друга. Фрейд бы плакал!</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-13" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/cUqqqCn.jpg" alt="Мультик" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/818cf8/ffffff?text=Мультик'">
+                    <div class="mt-4 text-center text-sm font-bold text-indigo-400">#13 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">13. Мультик (Марина) <span class="text-xl opacity-70">🐕 Унылая Жопка</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🐕 Доберман-суицидник:</strong> Обладательница 26-кг добермана с хлебушком в голове. Пёс маниакально пытается броситься под поезда на станции.</p>
+                        
+                        <p><strong class="text-white">🦥 Философия:</strong> Любимое занятие — спать. За это Дед Рома окрестил её «унылой жопкой». С матами собирается на «неофициальную работу», пока парень спит.</p>
+                        
+                        <p><strong class="text-white">⚔️ Битва с Дедом Ромой:</strong> Рома называет её цыганкой. Никита решил заступиться, Рома вспылил. Влетел админ и впаял всем мут. Спасательная операция провалилась!</p>
+                        
+                        <p><strong class="text-white">💍 Разведенка из Города Невест:</strong> Живет в Иваново, размахивает свидетельством о разводе. Пабло получает жесткий отказ. Жизненный принцип: «Ни капли в рот, ни сантиметра в жопу».</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-14" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row-reverse gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/Z4eALYB.jpg" alt="Highlander" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/dc2626/ffffff?text=Адам'">
+                    <div class="mt-4 text-center text-sm font-bold text-red-400">#14 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">14. Highlander (Адам) <span class="text-xl opacity-70">🪶 Вождь краснокожих</span></h2>
+                    
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">🪶 Гей-клуб:</strong> Пошел на свидание с Викой в тематический клуб в костюме индейца. Получил кучу комплиментов от мужиков. Эйфория закончилась, когда Вика положила его руку себе на член.</p>
+                        
+                        <p><strong class="text-white">🔪 Эзотерика:</strong> Спал с «ведьмой», которая во время процесса изрезала ладони им обоим. После этого пошел в военно-полевую хирургию.</p>
+                        
+                        <p><strong class="text-white">🔫 Миролюбивый горец:</strong> Доказывает, что дагестанцы дружелюбны. Но в 16 лет угнал машину подрифтить, за что отец отпиздил его шнуром от компьютера. Имеет два пулевых ранения.</p>
+                        
+                        <p><strong class="text-white">🧠 Философия:</strong> Задает дичайшие вопросы: с кем переспать менее по-гейски — с накачанной бабой или с трансом Марго Робби?</p>
+                        
+                        <p><strong class="text-white">💍 Парень Ани:</strong> Стал официальным парнем яжматери Ани. Раздает комплименты про глаза-родники. Пахнет элитным парфюмом с нотками гашиша!</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="hero-15" class="mb-24 scroll-mt-8">
+            <div class="glass-card rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="https://i.imgur.com/E58vncX.jpg" alt="Северная Ромашка" class="w-full h-auto rounded-2xl photo-frame object-cover" onerror="this.src='https://placehold.co/400x500/2dd4bf/ffffff?text=Ромашка'">
+                    <div class="mt-4 text-center text-sm font-bold text-teal-300">#15 РЕЙТИНГА</div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-serif font-bold mb-4 text-white">15. Северная Ромашка <span class="text-xl opacity-70">⚡️ Электрическая женщина</span></h2>
+                    
+                    <div class="bg-white/5 border-l-4 border-teal-300 p-4 rounded-r-lg mb-6 text-sm italic">
+                        <strong>Заметка от главреда:</strong> Сдуваем пыль с наших медицинских карт и достаем лавровые веники для создания атмосферы. На операционном столе пациентка, которая искрит от пластырей и является главным компаньоном Мишани. Разбираем на лепестки!
+                    </div>
+
+                    <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p><strong class="text-white">⚡️ Сосковый брокер:</strong> Наклеила пластырь и наэлектризовалась. Мишаня тут же примчался с «оголенным штекером». Торги закончились покупкой Мишаниных сосков.</p>
+                        
+                        <p><strong class="text-white">🍃 Вениканюхский комбинат:</strong> Жадно вдыхает ароматы лавровых веников в супермаркете. Обожает солянку без лука. Фантазировала про человеческие пельмешки (бренд «Женский мастер»). Вершина кулинарии — бульонный кубик «Галочка Бланочка».</p>
+                        
+                        <p><strong class="text-white">🌧 Вокзальная романтика:</strong> Живет у вокзала, жалуется на ноющие колени, попадает под ливни. Но регулярно собирает урожай в виртуальной ферме, пополняя клан нищих.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <section class="mt-16 glass-card p-8 rounded-3xl border-t-4 border-t-mag-accent text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-mag-accent/10 to-mag-glow/10 -z-10"></div>
+            <h2 class="text-3xl font-serif font-bold mb-6 text-white">Узнай свой статус в Треугольнике! 🔮</h2>
+            <p class="text-slate-300 mb-8 max-w-lg mx-auto">Нажми на кнопку, чтобы великий рандом определил твоё истинное предназначение в чате на эту неделю.</p>
+            
+            <button onclick="generateStatus()" class="bg-gradient-to-r from-mag-accent to-mag-glow text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg mb-6">
+                Сгенерировать титул
+            </button>
+            
+            <div id="status-result" class="hidden min-h-[80px] bg-white/10 p-6 rounded-2xl text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500 animate-pulse">
+                <!-- Result will appear here -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black/50 py-8 mt-12 text-center text-slate-500 text-sm">
+        <p>Журнал «Сплетни Бермуд» © 2023-2024. Все совпадения случайны, нервные клетки не восстанавливаются.</p>
+        <p class="mt-2">Специальный выпуск. Только для чтения на телефонах и в укрытиях.</p>
+    </footer>
+
+    <script>
+        // Fake payment for Nikita's photo
+        function payIriski() {
+            const msgEl = document.getElementById('iriski-msg');
+            msgEl.textContent = "Ошибка: Пабло всё спустил на милф! Ириски не доставлены.";
+            msgEl.classList.remove('hidden');
+            setTimeout(() => {
+                msgEl.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Random title generator
+        const titles = [
+            "Штатный Яжтролль",
+            "Скуф в стадии отрицания",
+            "Повелитель Черепах-Ниндзя",
+            "Директор Вениканюхского Комбината",
+            "Мистер Фельчинг",
+            "Жертва Ретроградного Меркурия",
+            "Владелец Солевой Фермы",
+            "Амбассадор Капроновых Колготок",
+            "Почетный Член Гарема",
+            "Унылая Жопка (с почетом)",
+            "Вредное КреведкО",
+            "Спонсор Пабло Эскобара",
+            "Главный Агроном Бермуд"
+        ];
+
+        function generateStatus() {
+            const resultDiv = document.getElementById('status-result');
+            resultDiv.classList.remove('hidden');
+            resultDiv.classList.add('animate-pulse');
+            resultDiv.textContent = "Гадаем по левому соску...";
+            
+            setTimeout(() => {
+                const randomTitle = titles[Math.floor(Math.random() * titles.length)];
+                resultDiv.classList.remove('animate-pulse');
+                resultDiv.innerHTML = `Твой титул: <br><span class="text-3xl text-white drop-shadow-md">${randomTitle}</span>`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
